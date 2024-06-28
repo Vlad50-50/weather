@@ -32,7 +32,7 @@ detailsBtn.addEventListener('click', () => {
 
 function getForecast(city) {
     const weatherApiKey = '36cfa6bb391b4ce09c9182606243005';
-    let weatherUrl = 'http://api.weatherapi.com/v1/forecast.json?key=' + weatherApiKey + '&q=' + city + '&days=7&aqi=no&alerts=no';
+    let weatherUrl = 'https://api.weatherapi.com/v1/forecast.json?key=' + weatherApiKey + '&q=' + city + '&days=7&aqi=no&alerts=no';
 
     const weather = new XMLHttpRequest();
     weather.open('GET', weatherUrl);
