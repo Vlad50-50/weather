@@ -1,6 +1,6 @@
 const todayForecast = document.getElementById('todayForecast');
 const weekdayForecast = document.getElementById('weekdayForecast');
-const BasiсInfoBtn = document.getElementById('BasiсInfoBtn');
+const BasicInfoBtn = document.getElementById('BasicInfoBtn');
 const detailsBtn = document.getElementById('detailsBtn');
 const main = document.getElementById('main');
 const accordion = document.getElementsByClassName("accordion");
@@ -15,10 +15,10 @@ submitBtn.addEventListener('click', () => {
      if (!cityInp.value == '') {getForecast(cityInp.value); cityList.value = cityInp.value;} 
      else getForecast(cityList.value);
 });
-BasiсInfoBtn.addEventListener('click', () => {
-    if (!BasiсInfoBtn.classList.contains('used') && isCorrect) {
+BasicInfoBtn.addEventListener('click', () => {
+    if (!BasicInfoBtn.classList.contains('used') && isCorrect) {
         renderPage('basicInfo');
-        BasiсInfoBtn.classList.add('used');
+        BasicInfoBtn.classList.add('used');
         detailsBtn.classList.remove('used');
     }
 });
@@ -26,7 +26,7 @@ detailsBtn.addEventListener('click', () => {
     if (!detailsBtn.classList.contains('used') && isCorrect) {
         renderPage('moreInfo');
         detailsBtn.classList.add('used');
-        BasiсInfoBtn.classList.remove('used');
+        BasicInfoBtn.classList.remove('used');
     }
 });
 
@@ -53,7 +53,7 @@ function getForecast(city) {
 }
 
 function renderPage(reqInfo) {
-    BasiсInfoBtn.classList.add('used');
+    BasicInfoBtn.classList.add('used');
     detailsBtn.classList.remove('used');
     main.classList.remove('hot', 'warm', 'cold');
     
