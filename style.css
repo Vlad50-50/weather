@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+:root{
+  --color-primary:rgb(141, 236, 180);
+  --color-primary-dark:rgb(65, 176, 110);
+  --color-white:rgb(255, 245, 224);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary); 
+  border-radius: 6px; 
+}
+
+::-webkit-scrollbar-track {
+background-color: var(--color-primary-dark); 
+}
+
+body {
+  background: var(--color-primary-dark);
+  margin: 20px;
+  height: 90vh;
+}
+
+::-moz-selection{
+  background-color:#ffee38;
+  color:#191919
+}
+
+::selection{
+  background-color:#ffee38;
+  color:#191919
+}
+
+.main {
+  background: rgb(65,176,110);
+  background: linear-gradient(180deg, rgba(65,176,110,1) 58%, rgba(160,207,83,1) 74%, rgba(255,238,56,1) 100%);
+  height: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  grid-template-columns: repeat(4,1fr);
+  justify-items: start;
+  justify-content: space-between;
+  gap: 5px;
+}
+label {
+  font-size: 15px;
+}
+#todayForecast {
+  max-width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+}
+#cityList, #submitBtn, #numOfDays, #cityinp {
+  transition: 0.3s;
+    background-color: var(--color-primary);
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#weekdayForecast {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 5px;
+}
+
+.elmWeekdayForecast {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(64, 165, 120);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  height: auto;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.name {
+  font-size: large;
+  color: antiquewhite;
+  font-size: 40px;
+}
+
+.name-form {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.weekHeader {
+  font-size: 20px;
+  color: var(--color-white);
+}
+
+.temperatura {
+  font-size: 30px;
+}
+
+.menuAndTodayForecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navMenu {
+  display: flex;
+  max-height: 50px;
+  gap: 5px;
+}
+
+.elmMenu {
+  padding: 10px  20px;
+  border-radius: 15px 15px 0 0;
+  background-color: var(--color-primary-dark);
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 500;
+}
+
+.used {
+  background-color: #9fff38;
+  cursor: default;
+}
+
+.location-and-date {
+  display: flex;
+  align-items: flex-start;
+}
+
+.elemIMG {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.hot {
+  background: rgb(65,176,110);
+  background: linear-gradient(180deg, rgba(65,176,110,1) 58%, rgba(160,207,83,1) 74%, rgba(255,238,56,1) 100%);
+}
+.warm {
+  background: rgb(65,176,110);
+}
+.cold {
+  background: rgb(65,176,110);
+  background: linear-gradient(180deg, rgba(65,176,110,1) 55%, rgba(55,216,182,1) 75%, rgba(44,255,253,1) 100%);
+}
+
+.err {
+  color: red;
+  font-size: 20px;
+}
+
+canvas {
+  max-width: 100%;
+  max-height: 200px;
+  background-color: #47c67a;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.sunrise {
+  background: rgb(65,91,176);
+  background: linear-gradient(180deg, rgba(65,91,176,1) 31%, rgba(210,216,55,1) 71%, rgba(210,216,55,1) 72%);
+  height: 20px;
+  width:  20px;
+  border-radius: 100%;
+  margin: 5px;
+}
+
+.sunset {
+  background: rgb(65,91,176);
+  background: linear-gradient(1deg, rgba(65,91,176,1) 31%, rgba(210,216,55,1) 71%, rgba(210,216,55,1) 72%);
+  height: 20px;
+  width:  20px;
+  border-radius: 100%;
+  margin: 5px;
+}
+
+.astro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.roler {
+  max-width: 200px;
+  margin: 214px;
+}
+
+.inforoler {
+  display: none; 
+}
+.active + .inforoler {
+  display: block; 
+  cursor: default !important;
+}
+
+@media (max-width: 1050px) {
+  .main{
+    flex-wrap: wrap;
+    justify-content: normal;
+  }
+}
+@media (max-width: 770px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+  .elmMenu {
+    padding: 5px 10px;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .elmWeekdayForecast {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+}
+
+@media (hover:hover){
+  #submitBtn:hover{
+    background-color: #ffee38;
+  }
+  .elmMenu:hover {
+    background-color:  #9fff38;
+  }
+}
+
+@media (hover:none){
+  #submitBtn:active{
+    background-color: #ffee38;
+  }
+  .elmMenu:active {
+    background-color:  #9fff38;
+  }
+}
+
